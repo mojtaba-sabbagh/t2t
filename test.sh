@@ -1,4 +1,4 @@
-
+export CUDA_VISIBLE_DEVICES=1
 MODEL=transformer
 HPARAMS=transformer_base
 USR_DIR=./
