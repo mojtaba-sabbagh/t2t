@@ -1,12 +1,12 @@
 SET SP=C:\Users\it\Anaconda3\Lib\site-packages\tensor2tensor\bin
 SET MODEL=transformer
-SET HPARAMS=transformer_base
+SET HPARAMS=transformer_base_single_gpu
 SET USR_DIR=.\
 SET PROBLEM=amirkabir_problem
-SET DATA_DIR=.\work
+SET DATA_DIR=.\work\%1
 SET TMP_DIR=.\work\tmp
 SET TRAIN_DIR=.\work\%PROBLEM%\%MODEL%-%HPARAMS%
-SET DECODE_FILE=%DATA_DIR%\targoman_test.en
+SET DECODE_FILE=%DATA_DIR%\%1_test.en
 
 SET BEAM_SIZE=4
 SET ALPHA=0.6
@@ -22,4 +22,4 @@ python %SP%\t2t_decoder.py^
   --decode_from_file=%DECODE_FILE%^
   --decode_to_file=%DATA_DIR%\hypo10k.fa
 
-python %SP%\t2t-bleu.py --translation=.\work\hypo100k.fa --reference=.\work\targoman_test.fa
+python %SP%\t2t_bleu.py --translation=%DATA_DIR%\hypo10k.fa --reference=%DATA_DIR%\%1_test.fa
