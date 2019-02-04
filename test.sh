@@ -1,6 +1,6 @@
 export CUDA_VISIBLE_DEVICES=1
 MODEL=transformer
-HPARAMS=transformer_base
+HPARAMS=transformer_base_single_gpu
 USR_DIR=./
 
 PROBLEM=$1_problem

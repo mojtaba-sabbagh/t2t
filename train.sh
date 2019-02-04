@@ -1,3 +1,4 @@
+export CUDA_VISIBLE_DEVICES=0,1,2,3
 MODEL=transformer
 HPARAMS=transformer_base_single_gpu
 USR_DIR=./
